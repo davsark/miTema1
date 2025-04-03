@@ -20,6 +20,12 @@ function my_theme_setup() {
         'flex-height' => true,
         'flex-width'  => true,
     ));
+    function register_my_menus() {
+        register_nav_menus(array(
+            'menu-principal' => __('Menú Principal', 'nombre-del-tema'),
+        ));
+    }
+    add_action('init', 'register_my_menus');
 
     // Register Navigation Menus
     register_nav_menus(array(
