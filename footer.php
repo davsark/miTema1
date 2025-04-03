@@ -9,39 +9,6 @@
         </div>
     </div>
 </footer>
-<style>
-.site-footer {
-    background-color: #333;
-    padding: 20px 0;
-    margin-top: 50px;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.footer-button {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 2px solid white;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.footer-button:hover {
-    background-color: white;
-    color: #333;
-}
-</style>
 </body>
 </html>
 

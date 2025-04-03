@@ -23,6 +23,7 @@ function my_theme_setup() {
 
     // Register Navigation Menus
     register_nav_menus(array(
+        'menu-principal' => 'Menú Principal',
         'header-menu' => 'Header Menu',
         'footer-menu' => 'Footer Menu',
     ));
@@ -68,3 +69,9 @@ function ensure_blog_posts_show() {
     }
 }
 add_action('template_redirect', 'ensure_blog_posts_show');
+
+// Función para registrar y cargar los estilos CSS
+function my_theme_enqueue_styles() {
+    wp_enqueue_style('theme-style', get_stylesheet_uri(), array(), '1.0.0');
+}
+add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
