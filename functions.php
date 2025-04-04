@@ -81,3 +81,20 @@ function my_theme_enqueue_styles() {
     wp_enqueue_style('theme-style', get_stylesheet_uri(), array(), '1.0.0');
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
+
+// Función para registrar áreas de widgets
+function mitema1_widgets_init() {
+    register_sidebar(array(
+        'name'          => 'Widget Global',
+        'id'            => 'widget-global',
+        'description'   => 'Este widget aparecerá en todas las páginas del sitio',
+        'before_widget' => '<div class="widget-global">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+}
+add_action('widgets_init', 'mitema1_widgets_init');
+
+// Incluir widget personalizado
+require_once(get_template_directory() . '/widget-personalizado.php');

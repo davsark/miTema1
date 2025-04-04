@@ -27,3 +27,11 @@
         </nav>
     </div>
 </header>
+
+<?php if (is_active_sidebar('widget-global')) : ?>
+<div class="widget-global-container">
+    <div class="container">
+        <?php dynamic_sidebar('widget-global'); ?>
+    </div>
+</div>
+<?php endif; ?>
