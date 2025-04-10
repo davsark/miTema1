@@ -98,3 +98,35 @@ add_action('widgets_init', 'mitema1_widgets_init');
 
 // Incluir widget personalizado
 require_once(get_template_directory() . '/widget-personalizado.php');
+
+//Funcion para contenido personalizado crear proyectos
+function crear_cpt_proyectos(): void {
+    $labels = array(
+        'name' => 'Proyectos',
+        'singular_name' => 'Proyecto',
+        'menu_name' => 'Proyectos',
+        'name_admin_bar' => 'Proyecto',
+        'add_new' => 'Añadir nuevo',
+        'add_new_item' => 'Añadir nuevo proyecto',
+        'edit_item' => 'Editar proyecto',
+        'new_item' => 'Nuevo proyecto',
+        'view_item' => 'Ver proyecto',
+        'all_items' => 'Todos los proyectos',
+        'search_items' => 'Buscar proyectos',
+        'not_found'=> 'No se encontraron proyectos',
+        'not_found_in_trash' => 'No hay proyectos en la papelera',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug'=> 'proyectos'),
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'menu_icon' => 'dashicons-portfolio',
+        'show_in_rest' => true,
+    );
+
+    register_post_type('proyectos', $args);
+}
+add_action('init', 'crear_cpt_proyectos');
